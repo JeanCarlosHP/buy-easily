@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "f4bf81d1-6270-403a-a378-669aeeb7d19e",
+		"name": "Buy Easily",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34356528"
+	},
+	"item": [
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "create transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": \"1\",\r\n    \"orderNumber\": 10,\r\n    \"orderValue\": 5.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/credit-card/send",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"credit-card",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "get mail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idUser\": \"1\",\r\n    \"orderNumber\": 10,\r\n    \"orderValue\": 5.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}:3001/mail?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"port": "3001",
+							"path": [
+								"mail"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
